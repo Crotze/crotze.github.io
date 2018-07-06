@@ -1,0 +1,257 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Encode Sans Condensed, sans-serif;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #f0b000;
+}
+
+a:visited {
+    color: #f0b000;
+}
+
+a:hover {
+    color: #bce35a;
+}
+
+/*For nav transition*/
+
+.main-nav.show ul {
+    transition: 1s;
+    background: #0c1313;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 2fr 10fr 2fr;
+    grid-template-areas: 
+        "for-back  for-back   for-back"
+        "for-back  for-back   for-back"
+        "timer     timer      timer"
+        "logistic  logistic   logistic"
+        ".      notes      ."     
+}
+
+.for-back {
+    background-image: url(../ASSETS/404_BG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f0b000;
+    grid-area: for-back;
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr;
+    grid-template-areas:
+        ". . nav"
+        "intro intro intro"
+}
+
+.main-nav {
+    grid-area: nav;
+    font-size: .8em;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.main-nav > ul {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    align-items: center;
+    transition: 1s;
+}
+
+.main-nav > ul li {
+    padding: 0px 80px;
+}
+
+.intro {
+    grid-area: intro;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.intro > h1 {
+    outline: 5px solid #eee;
+    outline-offset: 20px;
+}
+
+#timer-tab {
+    grid-area: timer;
+}
+
+#logistics-tab {
+    grid-area: logistic;
+}
+
+.notes-tab {
+    grid-area: notes;
+}
+
+.timer-wrapper {
+    grid-area: timeWrap;
+}
+
+.header {
+    grid-area: headings;
+}
+
+.logs-wrapper {
+    grid-area: logWrap;
+}
+
+/*Timer tab*/
+
+#timer-tab {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas:
+        ". headings ."
+        ". timeWrap .";
+    justify-content: center;
+    align-content: center;
+    background: #a9a9a9;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 100px 0px;
+    outline: 5px solid black;
+    outline-offset: 20px;
+    color: #f0b000;
+    text-align: center;
+}
+
+.timer-wrapper {
+    overflow: auto;
+}
+
+table {
+    background: #1e1e1e;
+    color: #e1e1e1;
+    width: 2100px;
+    padding: 10px;
+    font-size: .5em;
+}
+
+.timer-head, .equip-head {
+    text-align: center;
+    background-color: #f0b000;
+    padding: .5%;
+    color: #e1e1e1;
+}
+
+td, th {
+    padding: 1%;
+    text-align: left;
+    background-color: #060607;
+}
+
+.hg-5, .smg-5, .ar-5, .rf-5, .mg-5, .sg-5, .special-5 {
+    padding-left: 3%;
+    color: #ffcd4a;
+}
+
+.hg-4, .smg-4, .ar-4, .rf-4, .mg-4, .sg-4 {
+    padding-left: 3%;
+    color: #bce35a;
+}
+
+.hg-3, .smg-3, .ar-3, .rf-3, .mg-3, .sg-3 {
+    padding-left: 3%;
+    color: #4bd4ce;
+}
+
+.display-none {
+    background: #1e1e1e;
+}
+
+/*Logistics Timer*/
+
+#logistics-tab {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas:
+        ". headings ."
+        ". logWrap .";
+    justify-content: center;
+    align-content: center;
+    background-image: url(../ASSETS/BG_01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.timer-head {
+    color: #1e1e1e;
+    font-size: 2em;
+}
+
+.logs-wrapper {
+    overflow: auto;
+}
+
+.logistics-outline {
+    outline: 4px solid #ccc;
+    outline-offset: .25em;
+    text-shadow: 1px 1px black;
+}
+
+.logs-wrapper table td, .logs-wrapper table th {
+    text-align: center;
+}
+
+.table-decor {
+    padding-left: 12%;
+    color: #f0b000;
+}
+
+/*notes*/
+
+#notes-tab {
+    text-align: center;
+    margin: 100px;
+}
+
+@media (max-width: 1080px) {
+    
+    .for-back {
+        grid-template-columns: 1fr 10fr 1fr;
+        grid-template-areas:
+            ".nav."
+            ".intro.";
+        height: 100vh;
+    }
+    
+    .main-nav > ul {
+        flex-direction: column;
+        justify-content: center;
+        height: 20vh;
+    }
+    
+    .intro {
+        height: 80vh;
+    }
+}
